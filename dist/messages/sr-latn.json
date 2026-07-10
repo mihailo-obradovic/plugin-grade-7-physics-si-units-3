@@ -1,0 +1,7 @@
+{
+  "title": "SI jedinice i osnovni proračuni",
+  "intro": "Odgovorite na svih {count} pitanja, pa pošaljite odgovore.",
+  "submit": "Pošalji odgovore",
+  "progress": "{answered}/{total} odgovoreno",
+  "result": "Osvojili ste {score} od {total} bodova."
+}
