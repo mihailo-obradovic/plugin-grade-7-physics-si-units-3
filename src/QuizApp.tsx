@@ -1,73 +1,28 @@
 import { useState } from 'react';
 
+import { QUESTIONS_BY_LOCALE } from './content';
+import { usePluginTranslations } from './i18n/usePluginTranslations';
+
 import type { PluginContext } from './types';
-
-type Question = {
-  prompt: string;
-  choices: string[];
-  answerIndex: number;
-};
-
-const TITLE = 'SI Units and Basic Calculations';
-
-const QUESTIONS: Question[] = [
-  {
-    "prompt": "Which of the following is the correct SI unit for length?",
-    "choices": [
-      "centimeter (cm)",
-      "meter (m)",
-      "kilometer (km)",
-      "mile (mi)"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "prompt": "Convert 5 kilometers to meters using the formula: distance (m) = distance (km) × 1000.",
-    "choices": [
-      "500 m",
-      "5000 m",
-      "50,000 m",
-      "5 m"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "prompt": "If a car travels 120 meters in 6 seconds, what is its speed in meters per second? Use the formula: speed = distance ÷ time.",
-    "choices": [
-      "14 m/s",
-      "20 m/s",
-      "720 m/s",
-      "0.05 m/s"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "prompt": "Which of the following is NOT an SI base unit?",
-    "choices": [
-      "kilogram (kg) for mass",
-      "second (s) for time",
-      "kilometer (km) for distance",
-      "ampere (A) for electric current"
-    ],
-    "answerIndex": 2
-  }
-];
 
 type Props = {
   context: PluginContext;
 };
 
 export default function QuizApp({ context }: Props) {
+  const t = usePluginTranslations(context.i18n);
+  const locale = context.i18n.getLocale();
+  const questions = QUESTIONS_BY_LOCALE[locale];
   const [selections, setSelections] = useState<Record<number, number | null>>(() =>
-    Object.fromEntries(QUESTIONS.map((_, index) => [index, null]))
+    Object.fromEntries(questions.map((_, index) => [index, null]))
   );
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(null);
 
-  const answeredCount = QUESTIONS.filter(
+  const answeredCount = questions.filter(
     (_, index) => selections[index] !== null
   ).length;
-  const allAnswered = answeredCount === QUESTIONS.length;
+  const allAnswered = answeredCount === questions.length;
 
   function handleSelect(questionIndex: number, choiceIndex: number) {
     if (submitted) {
@@ -85,7 +40,7 @@ export default function QuizApp({ context }: Props) {
       return;
     }
 
-    const nextScore = QUESTIONS.reduce((total, question, index) => {
+    const nextScore = questions.reduce((total, question, index) => {
       if (selections[index] === question.answerIndex) {
         return total + 1;
       }
@@ -104,13 +59,13 @@ export default function QuizApp({ context }: Props) {
 
   return (
     <div className="pl-g7-physics-si-units-3-root">
-      {TITLE ? <h2 className="pl-g7-physics-si-units-3-title">{TITLE}</h2> : null}
+      <h2 className="pl-g7-physics-si-units-3-title">{t('title')}</h2>
 
       <p className="pl-g7-physics-si-units-3-intro">
-        Answer all {QUESTIONS.length} questions, then submit to check your work.
+        {t('intro', { count: questions.length })}
       </p>
 
-      {QUESTIONS.map((question, questionIndex) => (
+      {questions.map((question, questionIndex) => (
         <section
           key={questionIndex}
           className="pl-g7-physics-si-units-3-question"
@@ -151,19 +106,22 @@ export default function QuizApp({ context }: Props) {
           disabled={!allAnswered || submitted}
           onClick={handleSubmit}
         >
-          Submit answers
+          {t('submit')}
         </button>
 
         {!allAnswered && !submitted ? (
           <p className="pl-g7-physics-si-units-3-intro">
-            {answeredCount}/{QUESTIONS.length} answered
+            {t('progress', {
+              answered: answeredCount,
+              total: questions.length
+            })}
           </p>
         ) : null}
       </div>
 
       {submitted && score !== null ? (
         <p className="pl-g7-physics-si-units-3-result">
-          You scored {score} out of {QUESTIONS.length}.
+          {t('result', { score, total: questions.length })}
         </p>
       ) : null}
     </div>
