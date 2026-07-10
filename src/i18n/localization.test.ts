@@ -38,7 +38,9 @@ describe('si units localization', () => {
       'utf8'
     );
 
+    expect(source).toContain('usePluginLocale(context.i18n)');
     expect(source).toContain('usePluginTranslations(context.i18n)');
+    expect(source).not.toMatch(/context\.i18n\.getLocale\(\)/);
     expect(source).toContain('QUESTIONS_BY_LOCALE');
     expect(source).not.toContain('Submit answers');
   });

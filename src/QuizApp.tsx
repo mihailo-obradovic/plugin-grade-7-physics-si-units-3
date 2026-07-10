@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
 import { QUESTIONS_BY_LOCALE } from './content';
-import { usePluginTranslations } from './i18n/usePluginTranslations';
+import {
+  usePluginLocale,
+  usePluginTranslations
+} from './i18n/usePluginTranslations';
 
 import type { PluginContext } from './types';
 
@@ -11,7 +14,7 @@ type Props = {
 
 export default function QuizApp({ context }: Props) {
   const t = usePluginTranslations(context.i18n);
-  const locale = context.i18n.getLocale();
+  const locale = usePluginLocale(context.i18n);
   const questions = QUESTIONS_BY_LOCALE[locale];
   const [selections, setSelections] = useState<Record<number, number | null>>(() =>
     Object.fromEntries(questions.map((_, index) => [index, null]))
