@@ -1,0 +1,96 @@
+.pl-g7-physics-si-units-3-root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: var(--color-foreground, #221812);
+  font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+.pl-g7-physics-si-units-3-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.pl-g7-physics-si-units-3-intro {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground, #6b5a4d);
+}
+
+.pl-g7-physics-si-units-3-question {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  border-radius: var(--radius, 0.75rem);
+  background: color-mix(in srgb, currentColor 3%, transparent);
+}
+
+.pl-g7-physics-si-units-3-question-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.pl-g7-physics-si-units-3-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pl-g7-physics-si-units-3-option {
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  border-radius: 9999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 0.5rem 0.875rem;
+  transition: border-color 250ms ease, background-color 250ms ease;
+}
+
+.pl-g7-physics-si-units-3-option:hover {
+  border-color: var(--color-primary, #f7ac4d);
+}
+
+.pl-g7-physics-si-units-3-option[data-selected='true'] {
+  background: var(--color-primary, #f7ac4d);
+  border-color: var(--color-primary, #f7ac4d);
+  color: var(--color-primary-foreground, #221812);
+}
+
+.pl-g7-physics-si-units-3-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pl-g7-physics-si-units-3-submit {
+  border: 0;
+  border-radius: calc(var(--radius, 0.75rem) * 0.8);
+  background: var(--color-primary, #f7ac4d);
+  color: var(--color-primary-foreground, #221812);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.625rem 1rem;
+}
+
+.pl-g7-physics-si-units-3-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.pl-g7-physics-si-units-3-result {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}

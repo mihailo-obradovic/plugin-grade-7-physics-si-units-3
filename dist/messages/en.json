@@ -1,0 +1,7 @@
+{
+  "title": "SI Units and Basic Calculations",
+  "intro": "Answer all {count} questions, then submit to check your work.",
+  "submit": "Submit answers",
+  "progress": "{answered}/{total} answered",
+  "result": "You scored {score} out of {total}."
+}
