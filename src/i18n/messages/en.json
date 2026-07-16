@@ -1,7 +1,9 @@
 {
   "title": "SI Units and Basic Calculations",
-  "intro": "Answer all {count} questions, then submit to check your work.",
-  "submit": "Submit answers",
-  "progress": "{answered}/{total} answered",
-  "result": "You scored {score} out of {total}."
+  "progress": "Question {done} of {total}",
+  "correct": "Great job!",
+  "wrong": "Not yet — try again!",
+  "completeTitle": "You did it!",
+  "completeBody": "You answered all {count} questions!",
+  "playAgain": "Play again"
 }

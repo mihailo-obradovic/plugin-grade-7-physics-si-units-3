@@ -18,8 +18,8 @@ describe('si units localization', () => {
   });
 
   it('contains localized controls in both Serbian scripts', () => {
-    expect(pluginMessages['sr-latn'].submit).toBe('Pošalji odgovore');
-    expect(pluginMessages['sr-cyrl'].submit).toBe('Пошаљи одговоре');
+    expect(pluginMessages['sr-latn'].playAgain).toBe('Igraj ponovo');
+    expect(pluginMessages['sr-cyrl'].playAgain).toBe('Играј поново');
   });
 
   it('contains locale-keyed questions in both Serbian scripts', async () => {

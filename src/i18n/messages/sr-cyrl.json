@@ -1,7 +1,9 @@
 {
   "title": "SI јединице и основни прорачуни",
-  "intro": "Одговорите на свих {count} питања, па пошаљите одговоре.",
-  "submit": "Пошаљи одговоре",
-  "progress": "{answered}/{total} одговорено",
-  "result": "Освојили сте {score} од {total} бодова."
+  "progress": "Питање {done} од {total}",
+  "correct": "Браво!",
+  "wrong": "Још не — покушај поново!",
+  "completeTitle": "Сјајно!",
+  "completeBody": "Ријешена су сва питања — свих {count}!",
+  "playAgain": "Играј поново"
 }

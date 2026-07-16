@@ -1,6 +1,6 @@
 {
   "name": "plugin-grade-7-physics-si-units-3",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "packageManager": "pnpm@11.9.0",
   "type": "module",
