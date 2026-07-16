@@ -108,12 +108,24 @@
 
 /* Answer buttons ---------------------------------------------------------- */
 
+/* Answer alignment (driven by data-layout, derived from the choice data):
+   'grid' pairs choices into two columns (2×2 for four), 'row' puts three
+   short choices side by side, 'column' stacks sentence-length choices. */
 .pl-g7-physics-si-units-3-options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.9rem;
   width: 100%;
   max-width: 30rem;
+}
+
+.pl-g7-physics-si-units-3-options[data-layout='row'] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pl-g7-physics-si-units-3-options[data-layout='column'] {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 34rem;
 }
 
 .pl-g7-physics-si-units-3-option {

@@ -16,7 +16,21 @@ import type { CSSProperties } from 'react';
 
 const CELEBRATE_MS = 1500; // beat before auto-advancing
 
+// Above this length a choice reads as a sentence, not a token — sentence-like
+// answers stack in a single column instead of a grid.
+const LONG_CHOICE_CHARS = 28;
+
 const cx = (...names: string[]) => names.filter(Boolean).join(' ');
+
+// Deliberate answer alignment: long choices stack in one column; three short
+// choices share one row; anything else pairs into two columns (2×2 for four).
+function optionsLayout(choices: readonly string[]): 'column' | 'row' | 'grid' {
+  if (choices.some((choice) => choice.length > LONG_CHOICE_CHARS)) {
+    return 'column';
+  }
+
+  return choices.length === 3 ? 'row' : 'grid';
+}
 
 /** A staggered `--pl-i` index lets CSS delay each element's entrance. */
 function stepStyle(i: number): CSSProperties {
@@ -105,7 +119,7 @@ function SlideView({
 
       <h3 className="pl-g7-physics-si-units-3-prompt">{prompt}</h3>
 
-      <div className="pl-g7-physics-si-units-3-options">
+      <div className="pl-g7-physics-si-units-3-options" data-layout={optionsLayout(choices)}>
         {choices.map((choice, choiceIndex) => {
           const isWrong = wrong.has(choiceIndex);
           const isRight = solvedIndex === choiceIndex;
