@@ -1,0 +1,9 @@
+{
+  "title": "SI Units and Basic Calculations",
+  "progress": "Question {done} of {total}",
+  "correct": "Great job!",
+  "wrong": "Not yet — try again!",
+  "completeTitle": "You did it!",
+  "completeBody": "You answered all {count} questions!",
+  "playAgain": "Play again"
+}
