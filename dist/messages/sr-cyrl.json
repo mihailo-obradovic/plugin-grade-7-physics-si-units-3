@@ -1,0 +1,9 @@
+{
+  "title": "SI јединице и основни прорачуни",
+  "progress": "Питање {done} од {total}",
+  "correct": "Браво!",
+  "wrong": "Још не — покушај поново!",
+  "completeTitle": "Сјајно!",
+  "completeBody": "Ријешена су сва питања — свих {count}!",
+  "playAgain": "Играј поново"
+}
