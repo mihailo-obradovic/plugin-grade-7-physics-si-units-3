@@ -15,8 +15,8 @@
   padding: 1.5rem;
   min-height: 24rem;
   border-radius: var(--radius, 0.75rem);
-  background: var(--color-card, #fffaf3);
-  color: var(--color-foreground, #221812);
+  background: var(--color-card, #fefcf8);
+  color: var(--color-foreground, #24356b);
   font-family: var(--font-sans, system-ui, sans-serif);
 }
 
@@ -43,7 +43,7 @@
   width: 2rem;
   height: 2rem;
   border-radius: 9999px;
-  background: var(--color-muted, #f0e6da);
+  background: var(--color-muted, #e8edf7);
   font-size: 1.1rem;
   font-weight: 700;
   filter: grayscale(1) opacity(0.45);
@@ -55,13 +55,13 @@
 
 .pl-g7-physics-si-units-3-trail-done {
   filter: none;
-  box-shadow: var(--shadow-hard-sm, 0 2px 0 rgba(0, 0, 0, 0.15));
+  box-shadow: var(--shadow-hard-sm, 0 1px 4px rgba(36, 53, 107, 0.06));
 }
 
 .pl-g7-physics-si-units-3-trail-active {
   filter: none;
   transform: scale(1.15);
-  box-shadow: var(--shadow-hard-sm, 0 2px 0 rgba(0, 0, 0, 0.15));
+  box-shadow: var(--shadow-hard-sm, 0 1px 4px rgba(36, 53, 107, 0.06));
 }
 
 /* Stage + slide ----------------------------------------------------------- */
@@ -133,9 +133,9 @@
   padding: 0.75rem;
   border: none;
   border-radius: var(--radius-lg, 0.75rem);
-  background: var(--color-primary, #f7ac4d);
-  color: var(--color-primary-foreground, #221812);
-  box-shadow: var(--shadow-hard-md, 0 4px 0 rgba(0, 0, 0, 0.18));
+  background: var(--color-primary, #ffc93f);
+  color: var(--color-primary-foreground, #24356b);
+  box-shadow: var(--shadow-hard-md, 0 2px 10px rgba(36, 53, 107, 0.08));
   font-family: var(--font-heading, var(--font-sans, system-ui, sans-serif));
   font-size: clamp(1.05rem, 3vw, 1.4rem);
   font-weight: 800;
@@ -154,16 +154,16 @@
 
 .pl-g7-physics-si-units-3-option:active:not(:disabled) {
   transform: translateY(2px);
-  box-shadow: var(--shadow-hard-sm, 0 2px 0 rgba(0, 0, 0, 0.15));
+  box-shadow: var(--shadow-hard-sm, 0 1px 4px rgba(36, 53, 107, 0.06));
 }
 
 .pl-g7-physics-si-units-3-option:focus-visible {
-  outline: 3px solid var(--color-foreground, #221812);
+  outline: 3px solid var(--color-foreground, #24356b);
   outline-offset: 2px;
 }
 
 .pl-g7-physics-si-units-3-option-wrong {
-  background: var(--color-destructive, #dc2626);
+  background: var(--color-destructive, #c21725);
   color: #fff;
   cursor: not-allowed;
   animation: pl-g7-physics-si-units-3-shake 420ms ease-in-out both;
@@ -182,7 +182,7 @@
 
 .pl-g7-physics-si-units-3-step {
   margin: 0;
-  color: var(--color-muted-foreground, #6b5a4d);
+  color: var(--color-muted-foreground, #576283);
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -224,7 +224,7 @@
 
 .pl-g7-physics-si-units-3-complete-body {
   margin: 0;
-  color: var(--color-muted-foreground, #6b5a4d);
+  color: var(--color-muted-foreground, #576283);
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -235,9 +235,9 @@
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: var(--radius-lg, 0.75rem);
-  background: var(--color-primary, #f7ac4d);
-  color: var(--color-primary-foreground, #221812);
-  box-shadow: var(--shadow-hard-md, 0 4px 0 rgba(0, 0, 0, 0.18));
+  background: var(--color-primary, #ffc93f);
+  color: var(--color-primary-foreground, #24356b);
+  box-shadow: var(--shadow-hard-md, 0 2px 10px rgba(36, 53, 107, 0.08));
   font-family: var(--font-heading, var(--font-sans, system-ui, sans-serif));
   font-size: 1.1rem;
   font-weight: 800;
@@ -252,7 +252,7 @@
 }
 
 .pl-g7-physics-si-units-3-play-again:focus-visible {
-  outline: 3px solid var(--color-foreground, #221812);
+  outline: 3px solid var(--color-foreground, #24356b);
   outline-offset: 2px;
 }
 
